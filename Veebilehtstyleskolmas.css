@@ -1,0 +1,10 @@
+body {
+  background-color: grey;
+  font-family: verdana;
+  
+}
+h1 {
+  color: black;
+  border: solid black;
+  text-align: center  
+}
