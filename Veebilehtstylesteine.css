@@ -1,10 +1,25 @@
 body {
-  background-color: grey;
-  font-family: verdana;
-  
+	background-color: grey;
+	font-family: verdana;
 }
 h1 {
-  color: black;
-  border: solid black;
-  text-align: center  
+	color: black;
+	border: solid black;
+	text-align: center;
+	font-size: 40px;
+	font-family: "Rouge Script";
+}
+.tekst {
+	font-size: 25px;
+	font-family: "Agency FB";
+}
+.nupp {
+	font-size: 25px;
+	font-family: "Agency FB";
+}
+.pilt {
+
+}
+.ikoon {
+	width: 50px;
 }
