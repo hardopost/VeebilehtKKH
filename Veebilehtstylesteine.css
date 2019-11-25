@@ -9,6 +9,59 @@ h1 {
 	font-size: 40px;
 	font-family: "Rouge Script";
 }
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Sissejuhatus {background-color: red;}
+#Mälu {background-color: red;}
+#KaheAstmed {background-color: green;}
+#Contact {background-color: blue;}
+#KasutatudAllikad {background-color: orange;}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.pealkiri {
+	font-size: 30px;
+}
+.suurtekst {
+	font-size: 100px;
+}
 .tekst {
 	font-size: 25px;
 	font-family: "Agency FB";

@@ -10,15 +10,119 @@
 <body>
 
 	<h1>Masinkood</h1>
-	<div horizontal layout>
-		<a class="nupp" href="baas2.html">HINNAKIRI</a>
-		<a class="nupp" href="baas2.html">BRONEERI AEG</a>
+
+	<button class="tablink" onclick="openPage('Sissejuhatus', this, 'red')" id="defaultOpen">Sissejuhatus</button>
+	<button class="tablink" onclick="openPage('Mälu', this, 'red')">Mälu</button>
+	<button class="tablink" onclick="openPage('KaheAstmed', this, 'green')">Kahe astmed</button>
+	<button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
+	<button class="tablink" onclick="openPage('KasutatudAllikad', this, 'orange')">Kasutatud Allikad</button>
+
+	<div id="Sissejuhatus" class="tabcontent">
+		<h3>Tere tulemast</h3>
+		<p>Tutvume:</p>
+		<p>Mälu adresseerimisega</p>
+		<p>Masinkoodi ja programmide ülesehitusega</p>
+		<p>RISC arvuti käsustik</p>
 	</div>
-	<img class="pilt" src="https://www.w3schools.com/howto/pineapple.jpg" alt="Pilt">
-	<input class="ikoon" type="image" src="https://image.flaticon.com/icons/png/512/124/124010.png" />
-	<center class="tekst">** aadress **</center>
-	<center class="tekst">** avamis- ja sulgemisajad **</center>
+
+	<div id="Mälu" class="tabcontent">
+		<h3>Mälu</h3>
+		<p>Mälu on sõnade kogum</p>
+		<ul style="list-style-type:disc;">
+			<li>Igal mälupesal on oma kindel nimi - aadress</li>
+			<li>Tavaliselt on selleks arvud 0 ... 2^k - 1</li>
+			<li>Seega 2^k võimalikku adresseeritavat asukohta</li>
+			<li>Näiteks 2^32 = 4 Gi = 4 294 967 296</li>
+		</ul>
+		<img class="pilt" src="https://www.w3schools.com/howto/pineapple.jpg" alt="Pilt">
+		<input class="ikoon" type="image" src="https://image.flaticon.com/icons/png/512/124/124010.png" />
+	</div>
+
+	<div id="KaheAstmed" class="tabcontent">
+		<h3>Kahe astmed</h3>
+		<p>Some news this fine day!</p>
+		<div class="row">
+			<div class="column" style="background-color:#aaa;">
+				<h2>Kümnendsüsteem</h2>
+				<table style="width:100%">
+					<tr>
+						<td>K</td>
+						<td>1000 = 10^3</td>
+					</tr>
+					<tr>
+						<td>M</td>
+						<td>1 000 000 = 10^6</td>
+					</tr>
+					<tr>
+						<td>G</td>
+						<td>1 000 000 000 = 10^9</td>
+					</tr>
+					<tr>
+						<td>T</td>
+						<td>1 000 000 000 000 = 10^12</td>
+					</tr>
+				</table>
+			</div>
+			<div class="column" style="background-color:#bbb;">
+				<h2>Kahe astmed</h2>
+				<table style="width:100%">
+					<tr>
+						<td>Ki</td>
+						<td>2^10 = 1024</td>
+					</tr>
+					<tr>
+						<td>Mi</td>
+						<td>2^20 = 1 048 576</td>
+					</tr>
+					<tr>
+						<td>Gi</td>
+						<td>2^30 = 1 073 741 824</td>
+					</tr>
+					<tr>
+						<td>Ti</td>
+						<td>2^40 = 1 099 511 627 776</td>
+					</tr>
+				</table>
+				</div>
+			</div>
+	</div>
+
+	<div id="Contact" class="tabcontent">
+		<h3>Contact</h3>
+		<p>Get in touch, or swing by for a cup of coffee.</p>
+	</div>
+
+	<div id="KasutatudAllikad" class="tabcontent">
+		<h3>Kasutatud Allikad</h3>
+		<p>Arvuti Arhitektuur</p>
+		<p>Toomas Plank</p>
+		<a href="https://www.w3schools.com/html/default.asp">w3schools</a>
+		<a href="https://stackoverflow.com/">Stack Overflow</a>
+	</div>
 	
+<script>
+
+function openPage(pageName, elmnt, color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+
+  document.getElementById(pageName).style.display = "block";
+
+  elmnt.style.backgroundColor = color;
+}
+
+document.getElementById("defaultOpen").click();
+
+</script>
+
 </body>
 
 </html>
