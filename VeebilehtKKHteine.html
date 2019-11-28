@@ -14,7 +14,7 @@
 	<button class="tablink" onclick="openPage('Sissejuhatus', this, 'red')" id="defaultOpen">Sissejuhatus</button>
 	<button class="tablink" onclick="openPage('Mälu', this, 'red')">Mälu</button>
 	<button class="tablink" onclick="openPage('KaheAstmed', this, 'green')">Kahe astmed</button>
-	<button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
+	<button class="tablink" onclick="openPage('Ülesanded', this, 'blue')">Ülesanded</button>
 	<button class="tablink" onclick="openPage('KasutatudAllikad', this, 'orange')">Kasutatud Allikad</button>
 
 	<div id="Sissejuhatus" class="tabcontent">
@@ -87,9 +87,79 @@
 			</div>
 	</div>
 
-	<div id="Contact" class="tabcontent">
-		<h3>Contact</h3>
-		<p>Get in touch, or swing by for a cup of coffee.</p>
+	<div id="Ülesanded" class="tabcontent">
+		<h3>Ülesanded</h3>
+
+		<p>Kas käsu <b>Add R2,R1,R0</b> täitmine muudab registri R0 sisu?</p>
+		<p>Vastus: Ei</p>
+
+
+		<p>Kas käsu <b>Add R0,R1,R2</b> täitmine muudab registri R2 sisu?
+		<p>Vastus: Ei</p>
+
+
+		<p>RISC protsessoris lastakse käima järgmine ASM-programm</p>
+		<table style="width:25%">
+			<tr>
+				<td>1000</td>
+				<td>Load R1,LOC1</td>
+			</tr>
+			<tr>
+				<td>1004</td>
+				<td>Add R1,R1,R2</td>
+			</tr>
+			<tr>
+				<td>1008</td>
+				<td>Store R1,LOC1</td>
+			</tr>
+			<tr>
+				<td>1012</td>
+				<td>Subtract R5,R2,#10</td>
+			</tr>
+		</table>
+		<p><b>Milline on selle programmi käivitamise järel registri R1 sisu</b>, kui algselt oli registrite sisu alljärgnev:</p>
+		<p>R1 = 1197</p>
+		<p>R2 = 1308</p>
+		<p>R3 = 1359</p>
+		<p>R4 = 1827</p>
+		<p>R5 = 1003</p>
+		<p>Ja mälupesas LOC1 oli algselt arv 1379</p>
+		<p>Vastus: 2687</p>
+
+
+		<p>CISC protsessoris lastakse käima järgmine ASM-programm</p>
+		<table style="width:25%">
+			<tr>
+				<td>1000</td>
+				<td>Move R1,LOC1</td>
+			</tr>
+			<tr>
+				<td>1004</td>
+				<td>Add R1,R1,R2</td>
+			</tr>
+			<tr>
+				<td>1008</td>
+				<td>Move LOC1,R1</td>
+			</tr>
+			<tr>
+				<td>1012</td>
+				<td>Subtract R5,(R1)+,#10</td>
+			</tr>
+		</table>
+		<p><b>Milline on selle programmi käivitamise järel registri R1 sisu</b>, kui algselt oli registrite sisu alljärgnev:</p>
+		<p>R1 = 1982</p>
+		<p>R2 = 1693</p>
+		<p>R3 = 1888</p>
+		<p>R4 = 1662</p>
+		<p>R5 = 1440</p>
+		<p>Ja mälupesas LOC1 oli algselt arv 1613</p>
+		<p>Vastus: 3310</p>
+
+		
+		<p><i>Stack pointer</i> viitab mälupesale 1980. Programm lisab pinusse alamprogrammi jaoks 4 parameetrit, kutsub välja alamprogrammi.</p>
+		<p>Alamprogramm salvestab pinus tagasipöördumise aadressi, <i>Frame pointeri</i> sisu, 2 lokaalmuutujat ja 2 registri sisu.</p>
+		<p>Milline on <i>Stack pointeri</i> väärtus peale nimetet operatsioonide sooritamist, kui sõna pikkuseks on 16 bitti ja tegemist on bait-adresseeritava mäluga?</p>
+		<p>Vastus: 1960</p>
 	</div>
 
 	<div id="KasutatudAllikad" class="tabcontent">
