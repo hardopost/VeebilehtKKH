@@ -1,31 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
-body {
 
-  background: none;
-  color: #black;
-  
-}
-
-h1 {
-  color: black;
-  border: solid black;
-  text-align: center  
-}
-
-h9, h10 {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 200;
-  margin: 0.5rem;
-	
-}
-
-h10 {
-  font-size: 4rem;
-}
-
-h9 {
-  font-size: 2rem;
-}
 
 .container {
   display: flex;
@@ -49,9 +22,15 @@ h9 {
 
   
 .yldkonteiner {
+  background-color: #000000;
   width:1000px;
   margin: auto;
-  border: 1px solid red;
+  border: 1px solid grey;
+}
+
+.tekstikonteiner  {
+ width:900px;
+ margin: auto;
 }
 
 .videokonteiner{
