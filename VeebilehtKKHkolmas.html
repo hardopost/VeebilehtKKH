@@ -2,8 +2,8 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="Veebilehtstylekolmas.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="Veebilehtstyleskolmas.css">
 	<title>Skeemid</title>
 </head>
 
@@ -12,7 +12,7 @@
 
 	<button class="tablink" onclick="openPage('Sissejuhatus', this, 'gray')" id="defaultOpen">Sissejuhatus</button>
 	<button class="tablink" onclick="openPage('Skeemid', this, 'gray')">Skeemid</button>
-	<button class="tablink" onclick="openPage('Kasutatud kirjandus', this, 'gray')">Kasutatud kirjandus</button>
+	<button class="tablink" onclick="openPage('Kasutatud_kirjandus', this, 'gray')">Kasutatud kirjandus</button>
 	
 	<div id="Sissejuhatus" class="tabcontent">
 		<h3>Tere tulemast</h3>
@@ -30,7 +30,7 @@
 		<img class="pilt" src="Joonis2.png" alt="Pilt2">
 	</div>
 	
-	<div id="Kasutatud kirjandus" class="tabcontent">
+	<div id="Kasutatud_kirjandus" class="tabcontent">
 		<h3>RISC protsessori skeem</h3>
 		<p> </p>
 		<p>Toomas Plank</p>
@@ -55,6 +55,7 @@ function openPage(pageName, elmnt, color) {
 
   elmnt.style.backgroundColor = color;
 }
+
 
 document.getElementById("defaultOpen").click();
 
