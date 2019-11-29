@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="et">
 
 <head>
 	<meta charset="UTF-8">
@@ -12,9 +12,9 @@
 	<h1>Masinkood</h1>
 
 	<button class="tablink" onclick="openPage('Sissejuhatus', this, 'red')" id="defaultOpen">Sissejuhatus</button>
-	<button class="tablink" onclick="openPage('Mälu', this, 'red')">Mälu</button>
+	<button class="tablink" onclick="openPage('Malu', this, 'red')">Mälu</button>
 	<button class="tablink" onclick="openPage('KaheAstmed', this, 'green')">Kahe astmed</button>
-	<button class="tablink" onclick="openPage('Ülesanded', this, 'blue')">Ülesanded</button>
+	<button class="tablink" onclick="openPage('Ylesanded', this, 'blue')">Ülesanded</button>
 	<button class="tablink" onclick="openPage('KasutatudAllikad', this, 'orange')">Kasutatud Allikad</button>
 
 	<div id="Sissejuhatus" class="tabcontent">
@@ -25,7 +25,7 @@
 		<p>RISC arvuti käsustik</p>
 	</div>
 
-	<div id="Mälu" class="tabcontent">
+	<div id="Malu" class="tabcontent">
 		<h3>Mälu</h3>
 		<p>Mälu on sõnade kogum</p>
 		<ul style="list-style-type:disc;">
@@ -35,12 +35,11 @@
 			<li>Näiteks 2^32 = 4 Gi = 4 294 967 296</li>
 		</ul>
 		<img class="pilt" src="https://www.w3schools.com/howto/pineapple.jpg" alt="Pilt">
-		<input class="ikoon" type="image" src="https://image.flaticon.com/icons/png/512/124/124010.png" />
 	</div>
 
 	<div id="KaheAstmed" class="tabcontent">
 		<h3>Kahe astmed</h3>
-		<p>Some news this fine day!</p>
+		<p>Tere</p>
 		<div class="row">
 			<div class="column" style="background-color:#aaa;">
 				<h2>Kümnendsüsteem</h2>
@@ -87,79 +86,108 @@
 			</div>
 	</div>
 
-	<div id="Ülesanded" class="tabcontent">
+	<div id="Ylesanded" class="tabcontent">
 		<h3>Ülesanded</h3>
 
-		<p>Kas käsu <b>Add R2,R1,R0</b> täitmine muudab registri R0 sisu?</p>
-		<p>Vastus: Ei</p>
+
+		<div class="kysimus">
+
+			<p>Kas käsu <b>Add R2,R1,R0</b> täitmine muudab registri R0 sisu?</p>
+			<br>Vastus: <input type="text" class="input1" name="vastus"><br>
+			<p class="vastus">Vastus: Ei</p>
+
+		</div>
+
+		<br>
+
+		<div class="kysimus">
+
+			<p>Kas käsu <b>Add R0,R1,R2</b> täitmine muudab registri R2 sisu?
+			<br>Vastus: <input type="text" class="input2" name="vastus"><br>
+			<p class="vastus">Vastus: Ei</p>
+
+		</div>
+
+		<br>
+
+		<div class="kysimus">
+
+			<p>RISC protsessoris lastakse käima järgmine ASM-programm</p>
+			<table style="width:25%">
+				<tr>
+					<td>1000</td>
+					<td>Load R1,LOC1</td>
+				</tr>
+				<tr>
+					<td>1004</td>
+					<td>Add R1,R1,R2</td>
+				</tr>
+				<tr>
+					<td>1008</td>
+					<td>Store R1,LOC1</td>
+				</tr>
+				<tr>
+					<td>1012</td>
+					<td>Subtract R5,R2,#10</td>
+				</tr>
+			</table>
+			<p><b>Milline on selle programmi käivitamise järel registri R1 sisu</b>, kui algselt oli registrite sisu alljärgnev:</p>
+			<p>R1 = 1197</p>
+			<p>R2 = 1308</p>
+			<p>R3 = 1359</p>
+			<p>R4 = 1827</p>
+			<p>R5 = 1003</p>
+			<p>Ja mälupesas LOC1 oli algselt arv 1379</p>
+			Vastus: <input type="text" class="input3" name="vastus"><br>
+			<p class="vastus">Vastus: 2687</p>
+
+		</div>
 
 
-		<p>Kas käsu <b>Add R0,R1,R2</b> täitmine muudab registri R2 sisu?
-		<p>Vastus: Ei</p>
+		<div class="kysimus">
 
+			<p>CISC protsessoris lastakse käima järgmine ASM-programm</p>
+			<table style="width:25%">
+				<tr>
+					<td>1000</td>
+					<td>Move R1,LOC1</td>
+				</tr>
+				<tr>
+					<td>1004</td>
+					<td>Add R1,R1,R2</td>
+				</tr>
+				<tr>
+					<td>1008</td>
+					<td>Move LOC1,R1</td>
+				</tr>
+				<tr>
+					<td>1012</td>
+					<td>Subtract R5,(R1)+,#10</td>
+				</tr>
+			</table>
+			<p><b>Milline on selle programmi käivitamise järel registri R1 sisu</b>, kui algselt oli registrite sisu alljärgnev:</p>
+			<p>R1 = 1982</p>
+			<p>R2 = 1693</p>
+			<p>R3 = 1888</p>
+			<p>R4 = 1662</p>
+			<p>R5 = 1440</p>
+			<p>Ja mälupesas LOC1 oli algselt arv 1613</p>
+			<p class="vastus">Vastus: 3310</p>
 
-		<p>RISC protsessoris lastakse käima järgmine ASM-programm</p>
-		<table style="width:25%">
-			<tr>
-				<td>1000</td>
-				<td>Load R1,LOC1</td>
-			</tr>
-			<tr>
-				<td>1004</td>
-				<td>Add R1,R1,R2</td>
-			</tr>
-			<tr>
-				<td>1008</td>
-				<td>Store R1,LOC1</td>
-			</tr>
-			<tr>
-				<td>1012</td>
-				<td>Subtract R5,R2,#10</td>
-			</tr>
-		</table>
-		<p><b>Milline on selle programmi käivitamise järel registri R1 sisu</b>, kui algselt oli registrite sisu alljärgnev:</p>
-		<p>R1 = 1197</p>
-		<p>R2 = 1308</p>
-		<p>R3 = 1359</p>
-		<p>R4 = 1827</p>
-		<p>R5 = 1003</p>
-		<p>Ja mälupesas LOC1 oli algselt arv 1379</p>
-		<p>Vastus: 2687</p>
-
-
-		<p>CISC protsessoris lastakse käima järgmine ASM-programm</p>
-		<table style="width:25%">
-			<tr>
-				<td>1000</td>
-				<td>Move R1,LOC1</td>
-			</tr>
-			<tr>
-				<td>1004</td>
-				<td>Add R1,R1,R2</td>
-			</tr>
-			<tr>
-				<td>1008</td>
-				<td>Move LOC1,R1</td>
-			</tr>
-			<tr>
-				<td>1012</td>
-				<td>Subtract R5,(R1)+,#10</td>
-			</tr>
-		</table>
-		<p><b>Milline on selle programmi käivitamise järel registri R1 sisu</b>, kui algselt oli registrite sisu alljärgnev:</p>
-		<p>R1 = 1982</p>
-		<p>R2 = 1693</p>
-		<p>R3 = 1888</p>
-		<p>R4 = 1662</p>
-		<p>R5 = 1440</p>
-		<p>Ja mälupesas LOC1 oli algselt arv 1613</p>
-		<p>Vastus: 3310</p>
-
+		</div>
 		
-		<p><i>Stack pointer</i> viitab mälupesale 1980. Programm lisab pinusse alamprogrammi jaoks 4 parameetrit, kutsub välja alamprogrammi.</p>
-		<p>Alamprogramm salvestab pinus tagasipöördumise aadressi, <i>Frame pointeri</i> sisu, 2 lokaalmuutujat ja 2 registri sisu.</p>
-		<p>Milline on <i>Stack pointeri</i> väärtus peale nimetet operatsioonide sooritamist, kui sõna pikkuseks on 16 bitti ja tegemist on bait-adresseeritava mäluga?</p>
-		<p>Vastus: 1960</p>
+		
+		<div class="kysimus">
+		
+			<p><i>Stack pointer</i> viitab mälupesale 1980. Programm lisab pinusse alamprogrammi jaoks 4 parameetrit, kutsub välja alamprogrammi.</p>
+			<p>Alamprogramm salvestab pinus tagasipöördumise aadressi, <i>Frame pointeri</i> sisu, 2 lokaalmuutujat ja 2 registri sisu.</p>
+			<p>Milline on <i>Stack pointeri</i> väärtus peale nimetet operatsioonide sooritamist, kui sõna pikkuseks on 16 bitti ja tegemist on bait-adresseeritava mäluga?</p>
+			Vastus: <input type="text" class="input4" name="vastus"><br>
+			<p class="vastus">Vastus: 1960</p>
+
+		</div>
+
+		<button onclick="submitAnswers()">Valmis</button>
 	</div>
 
 	<div id="KasutatudAllikad" class="tabcontent">
@@ -192,6 +220,30 @@ function openPage(pageName, elmnt, color) {
 document.getElementById("defaultOpen").click();
 
 <!-- Kasutatud allikas: https://www.w3schools.com/howto/howto_js_tabs.asp -->
+
+
+function submitAnswers() {
+	var sisend1 = document.getElementByClassName("input1");
+	var sisend2 = document.getElementByClassName("input2");
+	var sisend3 = document.getElementByClassName("input3");
+	var sisend4 = document.getElementByClassName("input4");
+	window.write("Test");
+	answers(true);
+}
+
+function answers(visible) {
+	var vastused = document.getElementsByClassName("vastus");
+	if (visible) {
+		for (i = 0; i < vastused.length; i++) {
+			vastused[i].style.display = "block";
+		}
+	}
+	else {
+		for (i = 0; i < vastused.length; i++) {
+			vastused[i].style.display = "none";
+		}
+	}
+}
 
 </script>
 
