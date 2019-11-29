@@ -2,6 +2,7 @@ body, html {
   height: 100%;
   margin: 0;
   font-family: Arial;
+  background-color: black;
 }
 
 .tablink {
@@ -30,9 +31,9 @@ body, html {
 
 
 #Sissejuhatus {
-background-color: green;
+/* background-color: green;
 background-attachment: scroll;
-background-repeat: repeat-y;
+background-repeat: repeat-y; */
 }
-#Skeemid {background-color: green;}
-#Kasutatud_kirjandus {background-color: green;}
+#Skeemid {background-color: black;}
+#Kasutatud_kirjandus {background-color: black;}
