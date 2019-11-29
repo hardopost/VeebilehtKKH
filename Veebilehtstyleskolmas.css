@@ -3,6 +3,18 @@ body, html {
   margin: 0;
   font-family: Arial;
   background-color: black;
+  text-align: center;
+}
+
+h1 {
+background-color: black;
+color: white;
+}
+
+img {
+border-radius: 8px;
+width: 1000px;
+height: auto;
 }
 
 .tablink {
