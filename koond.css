@@ -3,7 +3,7 @@ body {
   font-family: 'Orbitron', sans-serif;
   background: url('background.png') no-repeat center center / cover;
   color: #ffffff;
-  
+  background-attachment: fixed;
 }
 
 h1 {
@@ -44,4 +44,12 @@ h9 {
   display: block;
   width: 500px;
   margin: auto;
+}
+
+.keskkonteiner {
+  background-color: #000000;
+  width:1000px;
+  margin: auto;
+  border: 1px solid grey;
+  text-align: center;
 }

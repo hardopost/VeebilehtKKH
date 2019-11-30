@@ -3,47 +3,130 @@
 
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="Veebilehtstyleteine.css">
+	<link rel="stylesheet" href="Veebilehtstylesteine.css">
+	<link rel="stylesheet" href="koond.css">
 	<title>Masinkood</title>
 </head>
 
 <body>
 
-	<h1>Masinkood</h1>
+	<h1 class="pealkiri">Masinkood</h1>
 
 	<button class="tablink" onclick="openPage('Sissejuhatus', this, 'red')" id="defaultOpen">Sissejuhatus</button>
 	<button class="tablink" onclick="openPage('Malu', this, 'red')">Mälu</button>
-	<button class="tablink" onclick="openPage('KaheAstmed', this, 'green')">Kahe astmed</button>
-	<button class="tablink" onclick="openPage('Ylesanded', this, 'blue')">Ülesanded</button>
-	<button class="tablink" onclick="openPage('KasutatudAllikad', this, 'orange')">Kasutatud Allikad</button>
+	<button class="tablink" onclick="openPage('KaheAstmed', this, 'red')">Kahe astmed</button>
+	<button class="tablink" onclick="openPage('Ylesanded', this, 'red')">Ülesanded</button>
+	<button class="tablink" onclick="openPage('KasutatudAllikad', this, 'red')">Kasutatud allikad</button>
 
 	<div id="Sissejuhatus" class="tabcontent">
-		<h3>Tere tulemast</h3>
-		<p>Tutvume:</p>
-		<p>Mälu adresseerimisega</p>
-		<p>Masinkoodi ja programmide ülesehitusega</p>
-		<p>RISC arvuti käsustik</p>
+
+		<h3 class="centertitle">Tere tulemast</h3>
+		
+		<div class="keskkonteiner">
+			<p class="centertitlenoborder">
+			Tutvume:
+			</p>
+			<p class="smalltext">
+			Mälu adresseerimisega<br><br>
+			Masinkoodi ja programmide ülesehitusega<br><br>
+			CISC arvuti käsustikuga<br><br>
+			Alamprogrammide väljakutsumine<br><br>
+			Masinkoodi käskude struktuur
+			</p>
+			<br>
+		</div>
 	</div>
 
 	<div id="Malu" class="tabcontent">
-		<h3>Mälu</h3>
-		<p>Mälu on sõnade kogum</p>
-		<ul style="list-style-type:disc;">
-			<li>Igal mälupesal on oma kindel nimi - aadress</li>
-			<li>Tavaliselt on selleks arvud 0 ... 2^k - 1</li>
-			<li>Seega 2^k võimalikku adresseeritavat asukohta</li>
-			<li>Näiteks 2^32 = 4 Gi = 4 294 967 296</li>
-		</ul>
-		<img class="pilt" src="https://www.w3schools.com/howto/pineapple.jpg" alt="Pilt">
+		<h3 class="centertitle">Mälu</h3>
+
+		<div class="row">
+			<div class="column">
+				<ul>
+				<li>Mälu on sõnade kogum</li>
+				<li>Igal mälupesal on oma kindel nimi - aadress</li>
+				<li>Tavaliselt on selleks arvud 0 ... 2^k - 1</li>
+				<li>Mälu koosneb miljonitest rakkudest</li>
+				<li>Igas rakus saame salvestada ühe biti infot - ehk siis võimalikud olekud on 0 ja 1</li>
+				<li>Tavaliselt loetakse-kirjutatakse infot n biti kaupa</li>
+				<li>Andmeühikuks on sõna, ingl word, kus n on sõna pikkus</li>
+				<li>Tänapäevastes arvutites on sõna pikkuseks 16 – 64 bitti</li>
+				<li>Baidi aadressid sõnas
+					<ul>
+					<li>On kaks varianti sõna sees baitide paigutamiseks
+					<ul>
+						<li>Little-Endian
+						<ul>
+						<li>Väiksema aadressiga mälupesad sisaldavad arvu <b>madalamaid</b> bitte</li>
+						</ul>
+						</li>
+						<li>Big-Endian
+						<ul>
+						<li>Väiksema aadressiga mälupesad sisaldavad arvu <b>kõrgemaid</b> bitte</li>
+						</ul>
+						</li>
+					</ul>
+					</li>
+					</ul>
+				</li>
+				</ul>
+			</div>
+			<div class="column">
+				<img alt="Stack Overflow" src="pildid/sõnad.png" style="width:100%">
+			</div>
+		</div>
+
+		<div class="keskkonteiner">
+			<pre>   </pre>
+			<img alt="Stack Overflow" src="pildid/mälu.png" style="width:80%">
+			<pre>	</pre>
+
+		</div>
+
+		<pre>	</pre>
+
+		<h3 class="centertitle">CISC arvuti</h3>
+		<div class="row">
+			<div class="column">
+				<img alt="Stack Overflow" src="pildid/cisc.png" style="width:100%">
+			</div>
+			<div class="column">
+				<ul style="list-style-type:disc;">
+					<li>CISC
+						<ul>
+						<li>Complex Instruction Set Computer</li>
+						<li>Lubab kasutada erineva pikkusega käske – St käsk võib olla pikem kui üks sõna</li>
+						<li>Operand võib olla ka mälupesa</li>
+						<li>Sellised käsud on reeglina juba küllaltki keerulised</li>
+						</ul>
+					</li>
+					<li>Pildil on näidisprogramm CISC arvutis
+						<ul>
+						<li>Käsud Add R1,R1,(R3) ja Add R3,R3,#4</li>
+						<li>Saame kokku võtta käsuks Add R1,(R3)+</li>
+						</ul>
+					</li>
+					<li><i>Subroutine linkage</i> method
+						<ul>
+						<li>Link-registris salvestatakse tagasipöördumise aadress (sisuliselt PC sisu)</li>
+						<li>Tagasipöördumisel viidatakse kaudselt sellele registrile</li>
+						<li>Probleem</li>
+						<li>Sageli juhtub nii, et alamprogrammi sees on tarvis kasutada teist alamprogrammi</li>
+						<li>ka selle alamprogrammi jaoks on vaja link-registris salvestada tagasipöördumise aadress</li>
+						<li>Lahendus: kasutatakse pinu</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 
 	<div id="KaheAstmed" class="tabcontent">
-		<h3>Kahe astmed</h3>
-		<p>Tere</p>
+		<h3 class="centertitle">Kahe astmed</h3>
 		<div class="row">
-			<div class="column" style="background-color:#aaa;">
-				<h2>Kümnendsüsteem</h2>
-				<table style="width:100%">
+			<div class="column">
+				<h2 class="centertitlenoborder">Kümnendsüsteem</h2>
+				<table class="bigtable" style="width:100%">
 					<tr>
 						<td>K</td>
 						<td>1000 = 10^3</td>
@@ -62,9 +145,9 @@
 					</tr>
 				</table>
 			</div>
-			<div class="column" style="background-color:#bbb;">
-				<h2>Kahe astmed</h2>
-				<table style="width:100%">
+			<div class="column">
+				<h2 class="centertitlenoborder">Kahe astmed</h2>
+				<table class="bigtable" style="width:100%">
 					<tr>
 						<td>Ki</td>
 						<td>2^10 = 1024</td>
@@ -84,31 +167,32 @@
 				</table>
 				</div>
 			</div>
+
+			<p class="centertitle">kilo, mega, giga, tera, kibi, mebi, gibi, tebi</p>
+
 	</div>
 
 	<div id="Ylesanded" class="tabcontent">
-		<h3>Ülesanded</h3>
+		<h3 class="centertitle">Ülesanded</h3>
 
 
 		<div class="kysimus">
 
 			<p>Kas käsu <b>Add R2,R1,R0</b> täitmine muudab registri R0 sisu?</p>
-			<br>Vastus: <input type="text" class="input1" name="vastus"><br>
+			<br>
+			Vastus: <input type="text" class="input" name="vastus">
 			<p class="vastus">Vastus: Ei</p>
 
 		</div>
-
-		<br>
 
 		<div class="kysimus">
 
-			<p>Kas käsu <b>Add R0,R1,R2</b> täitmine muudab registri R2 sisu?
-			<br>Vastus: <input type="text" class="input2" name="vastus"><br>
+			<p>Kas käsu <b>Add R0,R1,R2</b> täitmine muudab registri R2 sisu?</p>
+			<br>
+			Vastus: <input type="text" class="input" name="vastus">
 			<p class="vastus">Vastus: Ei</p>
 
 		</div>
-
-		<br>
 
 		<div class="kysimus">
 
@@ -138,7 +222,8 @@
 			<p>R4 = 1827</p>
 			<p>R5 = 1003</p>
 			<p>Ja mälupesas LOC1 oli algselt arv 1379</p>
-			Vastus: <input type="text" class="input3" name="vastus"><br>
+			<br>
+			Vastus: <input type="text" class="input" name="vastus"><br>
 			<p class="vastus">Vastus: 2687</p>
 
 		</div>
@@ -172,6 +257,8 @@
 			<p>R4 = 1662</p>
 			<p>R5 = 1440</p>
 			<p>Ja mälupesas LOC1 oli algselt arv 1613</p>
+			<br>
+			Vastus: <input type="text" class="input" name="vastus"><br>
 			<p class="vastus">Vastus: 3310</p>
 
 		</div>
@@ -182,20 +269,46 @@
 			<p><i>Stack pointer</i> viitab mälupesale 1980. Programm lisab pinusse alamprogrammi jaoks 4 parameetrit, kutsub välja alamprogrammi.</p>
 			<p>Alamprogramm salvestab pinus tagasipöördumise aadressi, <i>Frame pointeri</i> sisu, 2 lokaalmuutujat ja 2 registri sisu.</p>
 			<p>Milline on <i>Stack pointeri</i> väärtus peale nimetet operatsioonide sooritamist, kui sõna pikkuseks on 16 bitti ja tegemist on bait-adresseeritava mäluga?</p>
-			Vastus: <input type="text" class="input4" name="vastus"><br>
+			<br>
+			Vastus: <input type="text" class="input" name="vastus"><br>
 			<p class="vastus">Vastus: 1960</p>
 
 		</div>
 
-		<button onclick="submitAnswers()">Valmis</button>
+		<div class="kysimus">
+			<div class="submit">
+				<button class="nupp" onclick="submitAnswers()">Valmis</button>
+				<pre>   </pre>
+				<p id="punktid" class="vastus">Punktid</p>
+				<pre>   </pre>
+				<button id="uuesti" class="nupp" onclick="tryAgain()">Proovi uuesti</button>
+			</div>
+		</div>
 	</div>
 
 	<div id="KasutatudAllikad" class="tabcontent">
-		<h3>Kasutatud Allikad</h3>
-		<p>Arvuti Arhitektuur</p>
-		<p>Toomas Plank</p>
-		<a href="https://www.w3schools.com/html/default.asp">w3schools</a>
-		<a href="https://stackoverflow.com/">Stack Overflow</a>
+
+		<h3 class="centertitle">Kasutatud allikad</h3>
+		
+		<div class="keskkonteiner">
+			<br>
+			<p class="centertitlenoborder">
+			Arvuti Arhitektuur<br><br>
+			Toomas Plank<br>
+			</p>
+
+			<div class="logokonteiner">
+				<a href="https://www.w3schools.com">
+				<img alt="W3Schools" src="pildid/logo_w3schools.png" style="width:55%">
+				</a>
+
+				<br>
+
+				<a href="https://www.stackoverflow.com">
+				<img alt="Stack Overflow" src="pildid/logo_stackoverflow.png" style="width:50%">
+				</a>
+			</div>
+		</div>
 	</div>
 	
 <script>
@@ -222,26 +335,51 @@ document.getElementById("defaultOpen").click();
 <!-- Kasutatud allikas: https://www.w3schools.com/howto/howto_js_tabs.asp -->
 
 
+answers(false)
+
 function submitAnswers() {
-	var sisend1 = document.getElementByClassName("input1");
-	var sisend2 = document.getElementByClassName("input2");
-	var sisend3 = document.getElementByClassName("input3");
-	var sisend4 = document.getElementByClassName("input4");
-	window.write("Test");
+	var sisendid = document.getElementsByClassName("input");
+	var vastused = document.getElementsByClassName("vastus");
 	answers(true);
+
+	var punktid = 0;
+	for (i = 0; i < sisendid.length; i++) {
+		if (sisendid[i].value.toLowerCase() == vastused[i].innerHTML.slice(8).toLowerCase()) {
+			punktid++;
+			sisendid[i].style.backgroundColor = "#49fb36";
+		}
+		else {
+			sisendid[i].style.backgroundColor = "red";
+		}
+	}
+
+	var tekst = document.getElementById("punktid");
+	tekst.innerHTML = "Punktid: " + punktid + "/" + sisendid.length;
+}
+
+function tryAgain() {
+	answers(false)
+	var sisendid = document.getElementsByClassName("input");
+	for (i = 0; i < sisendid.length; i++) {
+		sisendid[i].style.backgroundColor = "";
+		sisendid[i].value = "";
+	}
 }
 
 function answers(visible) {
 	var vastused = document.getElementsByClassName("vastus");
+	var uuesti = document.getElementById("uuesti");
 	if (visible) {
 		for (i = 0; i < vastused.length; i++) {
 			vastused[i].style.display = "block";
 		}
+		uuesti.style.display = "block";
 	}
 	else {
 		for (i = 0; i < vastused.length; i++) {
 			vastused[i].style.display = "none";
 		}
+		uuesti.style.display = "none";
 	}
 }
 
