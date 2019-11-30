@@ -4,7 +4,7 @@ body {
   font-family:'Tomorrow light 300', sans-serif;
   background: url('background.png') no-repeat center center / cover;
   color: #ffffff;
-  
+  background-attachment: fixed;
 }
 
 h1, h2, h3, h4 {
@@ -38,21 +38,22 @@ h4 {
 >>>>>>> 1505884edca9070d6d545eb61bce7b5a1978fbad
 }
 
-h9, h10 {
+h5, h6 {
   font-family: 'Orbitron', sans-serif;
  font-weight: 200;
  margin: 0.5rem;
 	
 }
 
+h5 {
+  font-size: 2rem;
+}
 
-h10 {
+
+h6 {
   font-size: 4rem;
 }
 
-h9 {
-  font-size: 2rem;
-}
 
 .yldkonteiner {
   background-color: #000000;
@@ -72,6 +73,19 @@ h9 {
   margin: auto;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 #Skeemid {background: fixed;}
 >>>>>>> 1505884edca9070d6d545eb61bce7b5a1978fbad
+=======
+.keskkonteiner {
+  background-color: #000000;
+  width:1000px;
+  margin: auto;
+  border: 1px solid grey;
+  text-align: center;
+}
+#test {
+background: fixed;
+}
+>>>>>>> 25511593b4439b603a563ff54070fee00c299caa
