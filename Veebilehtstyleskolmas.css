@@ -82,6 +82,7 @@ height: auto;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
+  font-family: 'Orbitron', sans-serif;
   font-size: 17px;
   width: 100%;
 }
