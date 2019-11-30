@@ -36,7 +36,7 @@ text-align: center;
 h3 {
 margin: 0;
 /* padding-top: 50px; */
-widht: 1000px;
+/* widht: 1000px; */
 padding-right: 50px;
 padding-left: 50px;
 display: flex;
@@ -99,21 +99,17 @@ height: auto;
 }
 
 
-#Lisa {
+#Lisa, #Lisa1, #Lisa2 {
 width: 100%;
 padding: 0;
 margin: 0;
 left: 0;
 bottom: 0;
-position: absolute;
+position: fixed;
 color: white;
 text-align: left;
 background-color: black;
 }
-#Avaleht {
-/* background-color: green;
-background-attachment: scroll;
-background-repeat: repeat-y; */
-}
-#Skeemid {background: none;}
-#Allikad {background-color: black;}
+
+#Skeemid {background: fixed;}
+#Allikad {background: fixed;}
