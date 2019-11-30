@@ -10,14 +10,12 @@
 	<title>Arvuti arhitektuur</title>
 </head>
 
-
-
 <body>
 
 <div class="yldkonteiner">
 <div class="container">
     <h10>&#8203
-      <span class="txt-type" data-wait="3000" data-words='["Arvuti arhitektuur"]'></span>
+      <span class="txt-type" data-wait="3000" data-words='["Arvuti arhitektuur", "Masinkood", "Skeemid"]'></span>
     </h10>
     <h9>Teretulemast veebilehele!</h9>
 	</div>
@@ -25,29 +23,62 @@
 	<script src="funk.js"></script>
 
 <div class="tekstikonteiner">
+	<div class="menyykonteiner">
 	
-	<a href="VeebilehtKKHteine.html" class="button">Loe masinkoodi kohta</a>
+	<div class="row">
+	<div class="column">
+    <p><h3>Üldine sissejuhatus</h3> <img src="noola.png" class="ikoonalla"></p>
+	</div>
+	<div class="column">
+    <p><h3>Detailsem info</h3> <img src="noolp.png" class="ikoonparem"></p>
+	</div>
+	<div class="column"><div class="nupukonteiner">
+	<a href="VeebilehtKKHteine.html"><h3>Loe masinkoodi kohta</h3></a>
+	</div>
+	<div class="nupukonteiner">
+	<a href="VeebilehtKKHkolmas.html"><h3>Loe skeemide kohta</h3></a>
+	</div></div>
+  </div>
+</div>
 	
 	
-	<a href="VeebilehtKKHkolmas.html" class="button">Loe skeemide kohta</a>
+	
 	
 	<h2>Kuidas info arvutis liigub?</h2>
 	
-	<h3>Mis on bit?</h3>
+	<h3>Mis on bitt?</h3>
 	
-    <p>Väikseim ühik, millega arvutites infot saab liigutada on üks bitt. Nimetus bitt (inglise keeles <i>"bit"</i>) tuleneb inglisekeelsest nimetusest <i>"binary digit"</i>, mis 
-	tähendab kahendarvu ühte numbrikohta. Biti väärtus saab olla ainult kas 0 või 1. Need numbrid ja nende väärtused on aluseks nii kahendsüsteemis arvude moodustamiseks, kui arvutis
-	erinevate loogikaskeemide koostamiseks.<p/>
-		
+    <p>Väikseim ühik, millega arvutites infot saab liigutada on üks <b>bitt</b>. Nimetus <b>bitt</b> (inglise keeles <i>"bit"</i>) tuleneb inglisekeelsest nimetusest <i>"binary digit"</i>, mis 
+	tähendab kahendarvu ühte numbrikohta. Tähiseks on väike <b>b</b>. Biti väärtus saab olla ainult kas 0 või 1. Need numbrid ja nende väärtused on aluseks nii kahendsüsteemis arvude moodustamiseks, kui arvutis
+	erinevate loogikaskeemide koostamiseks. Näiteks kahte bitiga 0 ja 1 omavahel kombineerides saab edasi anda neli erinevat väärtust 00, 01, 10 ja 11. Kõik numbrid ja tähed, mida 
+	arvutikasutaja ekraanilt näeb on kodeeritud bittide jadana. Näiteks ühe kümnendnumbri salvestamiseks arvutis on vaja nelja bitti ja ühe tähe salvestamiseks <a href="https://www.asciitable.com" target="_blank"><pu>ascii</pu></a> koodis on vaja seitset bitti.
+	Kui kaheksa bitti on üksteise järele pandud, siis see moodustab suurusühiku, mida kutsutake baidiks (inglise keeles <i>"byte"</i>) ja baidi tähiseks on suur <b>B.</b> Vaata erinevate suurusühikute kohta
+	baidist terabaidini ka allpool olevat videot ning samuti leidub veel infot suurusühikute kohta käesoleva veebilehe <a href="VeebilehtKKHteine.html">masinkoodi</a> osas. <p/>	
 	
 	
 	<iframe class="videokonteiner" width="500" height="315" src="https://www.youtube.com/embed/gzAagjQj6Qc"></iframe>
 	
 	<h3>Mis on sõna?</h3>
 	
-	<p>Seoses arvutitega on kasutusel ka selline termin nagu <b>sõna</b> (inglise keeles <i>"word"</i>). Sõna koosneb üksteisejärele paigutatud bittidest.</p>
+	<p>Seoses arvuti arhitektuuriga on kasutusel ka selline termin nagu <b>sõna</b> (inglise keeles <i>"word"</i>). Sõna koosneb üksteisejärele paigutatud bittidest ehk sõna on fikseertud suurusega
+	bitidest koosnev andmehulk, mille kaupa riistvarakomponendid ja protsessor saavad andmeid liigutada ja töödelda. Tänapäeva protsessorite puhul "32-bit" ja "64-bit" tähendavad 
+	sisuliselt protsessori sisemiste registrite suurust, ehk 32 bitiline protsessor saab sisse võtta, salvestada, arvutada ja väljastada informatsiooni 32 bitiste sõnade
+	kaupa ja 64 bitine protsessor töötab vastavalt 64 bitiste sõnadega. Üks sõna võib sisaldada näiteks käsku, mäluaadressi ja andmeid, mida tuleb töödelda või näiteks osa andmetest, mida on vaja 
+	juba olemasolevatele andmetele juurde paigutada.<br>
+	Allpool on toodud illustreerimiseks üks pilt 32 bitisest sõnast, mis on värvidega jagatud neljaks baidiks. See suur number pildi all näitab mitu
+	erinevat kombinatsiooni on võimalik 32 bitiga moodustada, ehk ühe sõnaga on võimalik päris palju erinevat informatsiooni edasi anda. Allpool toodud
+	väärtuse saab arvutada kaks astmel bittide arv ehk 2<sup>32</sup>.
+	</p>
+	
+	<div class="videokonteiner">
+    <p><h4>32 bitine sõna</h4>
+	<img src="word.png" class="pilts"></p>
+	</div>
+	
+	
 </div>	
 </div>​
+</div>
 </body>
 
 </html>
